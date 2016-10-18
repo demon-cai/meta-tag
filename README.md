@@ -45,7 +45,7 @@ html5 之前网页中会这样写：
 
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-相关链接：[SiteApp 转码声明](http://m.baidu.com/pub/help.php?pn=22&ssid=0&from=844b&bd_page_type=1)
+相关链接：[SiteApp 转码声明](https://www.baidu.com/duty/wise/tc_siteapp.html)
 
 ##SEO 优化部分
 1. 页面标题<title>标签(head 头部必须)
@@ -84,7 +84,10 @@ height viewport 高度(数值/device-height)
 initial-scale 初始缩放比例
 maximum-scale 最大缩放比例
 minimum-scale 最小缩放比例
-user-scalable 是否允许用户缩放(yes/no)
+[user-scalable] 是否允许用户缩放(yes/no)(ios10失效）
+>user-scalable 在IOS10失效，
+To improve the accessibility on websites in Safari, users can now pinch-to-zoom even when a website sets user-scalable=no in the viewport.
+
 minimal-ui iOS 7.1 beta 2 中新增属性，可以在页面加载时最小化上下状态栏。这是一个布尔值，可以直接这样写：
 
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
