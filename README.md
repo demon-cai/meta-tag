@@ -69,42 +69,42 @@ html5 之前网页中会这样写：
 ##SEO 优化部分
 1. 页面标题标签
 
-    <title>your title</title>
-
+        <title>your title</title>
+    
 2. 页面关键词 keywords
 
-    <meta name="keywords" content="your keywords">
+        <meta name="keywords" content="your keywords">
 
 3. 页面描述内容 description
 
-    <meta name="description" content="your description">
+        <meta name="description" content="your description">
 
 4. 定义网页作者 author
 
-    <meta name="author" content="author,email address">
+        <meta name="author" content="author,email address">
 
 5. 定义网页搜索引擎索引方式，robotterms 是一组使用英文逗号「,」分割的值，通常有如下几种取值：none，noindex，nofollow，all，index和follow。
 
-    <meta name="robots" content="index,follow" />
-    <!--
-        all：文件将被检索，且页面上的链接可以被查询；
-        none：文件将不被检索，且页面上的链接不可以被查询；
-        index：文件将被检索；
-        follow：页面上的链接可以被查询；
-        noindex：文件将不被检索，但页面上的链接可以被查询；
-        nofollow：文件将不被检索，页面上的链接可以被查询。
-     -->
+        <meta name="robots" content="index,follow" />
+        <!--
+            all：文件将被检索，且页面上的链接可以被查询；
+            none：文件将不被检索，且页面上的链接不可以被查询；
+            index：文件将被检索；
+            follow：页面上的链接可以被查询；
+            noindex：文件将不被检索，但页面上的链接可以被查询；
+            nofollow：文件将不被检索，页面上的链接可以被查询。
+         -->
 
 6. 页面重定向和刷新：content内的数字代表时间（秒），既多少时间后刷新。如果加url,则会重定向到指定网页（搜索引擎能够自动检测，也很容易被引擎视作误导而受到惩罚）。
 
-    <meta http-equiv="refresh" content="0;url=" />
+        <meta http-equiv="refresh" content="0;url=" />
     
 7. 其他
     
-    <meta name="author" content="author name" /> <!-- 定义网页作者 -->
-    <meta name="google" content="index,follow" />
-    <meta name="googlebot" content="index,follow" />
-    <meta name="verify" content="index,follow" />
+        <meta name="author" content="author name" /> <!-- 定义网页作者 -->
+        <meta name="google" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="verify" content="index,follow" />
 
 相关链接：[WEB1038 – 标记包含无效的值](http://msdn.microsoft.com/zh-cn/library/ff724037/(v=expression.40/).aspx)
 
