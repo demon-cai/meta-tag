@@ -106,7 +106,7 @@ html5 之前网页中会这样写：
         <meta name="googlebot" content="index,follow" />
         <meta name="verify" content="index,follow" />
 
-相关链接：[WEB1038 – 标记包含无效的值](http://msdn.microsoft.com/zh-cn/library/ff724037/(v=expression.40/).aspx)
+相关链接：[WEB1038 – 标记包含无效的值](https://msdn.microsoft.com/zh-cn/library/ff724037)
 
 ## viewport
 
