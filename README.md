@@ -26,6 +26,25 @@ html5 之前网页中会这样写：
 ##优先使用 IE 最新版本和 Chrome
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- 关于X-UA-Compatible -->
+    <meta http-equiv="X-UA-Compatible" content="IE=6" ><!-- 使用IE6 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=7" ><!-- 使用IE7 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=8" ><!-- 使用IE8 -->
+    
+##浏览器内核控制：
+国内浏览器很多都是双内核（webkit和Trident），webkit内核高速浏览，IE内核兼容网页和旧版网站。而添加meta标签的网站可以控制浏览器选择何种内核渲染。参考文档
+
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    
+国内双核浏览器默认内核模式如下：
+
+　　1. 搜狗高速浏览器、QQ浏览器：IE内核（兼容模式）
+
+　　2. 360极速浏览器、遨游浏览器：Webkit内核（极速模式）
+
+禁止浏览器从本地计算机的缓存中访问页面内容：这样设定，访问者将无法脱机浏览。
+
+    <meta http-equiv="Pragma" content="no-cache">
 
 ##360 使用Google Chrome Frame
 
@@ -48,7 +67,7 @@ html5 之前网页中会这样写：
 相关链接：[SiteApp 转码声明](https://www.baidu.com/duty/wise/tc_siteapp.html)
 
 ##SEO 优化部分
-1. 页面标题<title>标签(head 头部必须)
+1. 页面标题标签
 
     <title>your title</title>
 
@@ -66,7 +85,26 @@ html5 之前网页中会这样写：
 
 5. 定义网页搜索引擎索引方式，robotterms 是一组使用英文逗号「,」分割的值，通常有如下几种取值：none，noindex，nofollow，all，index和follow。
 
-    <meta name="robots" content="index,follow">
+    <meta name="robots" content="index,follow" />
+    <!--
+        all：文件将被检索，且页面上的链接可以被查询；
+        none：文件将不被检索，且页面上的链接不可以被查询；
+        index：文件将被检索；
+        follow：页面上的链接可以被查询；
+        noindex：文件将不被检索，但页面上的链接可以被查询；
+        nofollow：文件将不被检索，页面上的链接可以被查询。
+     -->
+
+6. 页面重定向和刷新：content内的数字代表时间（秒），既多少时间后刷新。如果加url,则会重定向到指定网页（搜索引擎能够自动检测，也很容易被引擎视作误导而受到惩罚）。
+
+    <meta http-equiv="refresh" content="0;url=" />
+    
+7. 其他
+    
+    <meta name="author" content="author name" /> <!-- 定义网页作者 -->
+    <meta name="google" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="verify" content="index,follow" />
 
 相关链接：[WEB1038 – 标记包含无效的值](http://msdn.microsoft.com/zh-cn/library/ff724037/(v=expression.40/).aspx)
 
@@ -79,12 +117,12 @@ width=device-width 会导致 iPhone 5 添加到主屏后以 [WebApp 全屏模式
 
 content 参数：
 
-width viewport 宽度(数值/device-width)
-height viewport 高度(数值/device-height)
-initial-scale 初始缩放比例
-maximum-scale 最大缩放比例
-minimum-scale 最小缩放比例
-[user-scalable] 是否允许用户缩放(yes/no)(ios10失效）
+1. width viewport 宽度(数值/device-width)
+2. height viewport 高度(数值/device-height)
+3. initial-scale 初始缩放比例
+4. maximum-scale 最大缩放比例
+5. minimum-scale 最小缩放比例
+6. [user-scalable] 是否允许用户缩放(yes/no)(ios10失效）
 >user-scalable 在IOS10失效，
 To improve the accessibility on websites in Safari, users can now pinch-to-zoom even when a website sets user-scalable=no in the viewport.
 
@@ -215,7 +253,33 @@ favicon icon
     <link rel="shortcut icon" type="image/ico" href="/favicon.ico" /> <!-- 添加 favicon icon -->
 比较详细的 favicon 介绍可参考[https://github.com/audreyr/favicon-cheat-sheet](https://github.com/audreyr/favicon-cheat-sheet)
 
-移动端的meta
+##QQ浏览器私有 Meta 属性（x5内核定制标签）
+
+    <!-- 设置屏幕方向 -->
+    <meta name="x5-orientation" content="portrait|landscape" />
+    <!-- 设置全屏 -->
+    <meta name="x5-fullscreen" content="true" />
+    <!-- 设置屏幕模式 -->
+    <meta name="x5-page-mode" content="app" />
+
+##UC浏览器私有 Meta 属性
+
+    <!-- 横屏、竖屏显示 -->
+    <meta name="screen-orientation" content="portrait|landscape">
+    <!-- 设置是否全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- 缩放不出滚动条 -->
+    <meta name="viewport" content="uc-fitscreen=no|yes"/>
+    <!-- 排版 -->
+    <meta name="layoutmode" content="fitscreen|standard" />
+    <!-- 夜间模式 -->
+    <meta name="nightmode" content="enable|disable"/>
+    <!-- 应用模式 -->
+    <meta name="browsermode" content="application"/>
+    <!-- 强制图片显示 -->
+    <meta name="imagemode" content="force"/>
+
+##移动端的meta
 
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
